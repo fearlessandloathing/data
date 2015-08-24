@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js" type="text/javascript"></script>
+    	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="controls.js" type="text/javascript"></script>
+	<script src="creategraph.js" type="text/javascript"></script>
+	<script src="helpers.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+</script>
+
+</head>
+
+<body>
+<script>
+$( document ).ready(function() {
+	var column;
+	var races = [];
+	var startYear;
+	var endYear;
+
+	d3.csv("graddata.csv", function(csv) {
+		$("form").append(makeColumnDropDown(csv));
+		$("form").append(makeRaceCheckBox(csv));
+		$("form").append(makeStartYear(csv));
+		$("form").append(makeEndYear(csv));
+		$("form").append(makeSubmitButton());
+	});
+});
+</script>
+
+
+<form></form>
+
+<!--<button onclick="createGraph()">GRAPH IT!!!</button>-->
+
+</body>
+
+</html>
